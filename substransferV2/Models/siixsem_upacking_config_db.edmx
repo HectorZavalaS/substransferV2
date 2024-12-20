@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="siixsem_upacking_config_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="getModelByCustomerNo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CustNo" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getModelConfig" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModelDet" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="siixsem_upacking_config_dbModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="siixsem_upacking_config_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="siixsem_upacking_config_dbEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="getModelConfig" ReturnType="Collection(siixsem_upacking_config_dbModel.getModelConfig_Result)">
+          <Parameter Name="idModelDet" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getModelByCustomerNo" ReturnType="Collection(siixsem_upacking_config_dbModel.getModelByCustomerNo_Result)">
+            <Parameter Name="CustNo" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="getModelConfig_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="ID_DET" Nullable="false" />
+          <Property Type="Int32" Name="ISKIT" Nullable="false" />
+          <Property Type="String" Name="MODEL" Nullable="false" MaxLength="150" />
+          <Property Type="Int32" Name="STANDARD_PACK" Nullable="false" />
+          <Property Type="String" Name="SERIAL_LENGTH" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="SIDE" Nullable="false" MaxLength="150" />
+          <Property Type="Int32" Name="STATUS" Nullable="false" />
+          <Property Type="String" Name="CUSTOMER_NO" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="INTERNAL_NO" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TRACEABILITY" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="KANBAN" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TABLE_ICT" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="TABLE_FCT" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="TABLE_COVER" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="TABLE_PACK" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="TABLE_GB" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="LABEL" Nullable="false" MaxLength="150" />
+          <Property Type="Int32" Name="VALIDATE_DJ" Nullable="false" />
+          <Property Type="Int32" Name="VALIDATE_GAPFILLER" Nullable="false" />
+          <Property Type="Int32" Name="VALIDATE_FLASH_PROG" Nullable="false" />
+          <Property Type="Int32" Name="VALIDATE_ICT" Nullable="false" />
+          <Property Type="Int32" Name="VALIDATE_FCT_MIDDLE" Nullable="false" />
+          <Property Type="Int32" Name="VALIDATE_FCT_FINAL" Nullable="false" />
+          <Property Type="Int32" Name="VALIDATE_FCT_TIME" Nullable="false" />
+          <Property Type="Int32" Name="VALIDATE_FLUX_LED1" Nullable="false" />
+          <Property Type="Int32" Name="VALIDATE_COLOR_LED1" Nullable="false" />
+          <Property Type="Int32" Name="VALIDATE_VOLT_LED1" Nullable="false" />
+          <Property Type="Int32" Name="VALIDATE_FLUX_LED2" Nullable="false" />
+          <Property Type="Int32" Name="VALIDATE_COLOR_LED2" Nullable="false" />
+          <Property Type="Int32" Name="VALIDATE_VOLT_LED2" Nullable="false" />
+          <Property Type="Int32" Name="ID_LINE" Nullable="false" />
+          <Property Type="String" Name="LINE" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="IDPRINTER" Nullable="false" />
+          <Property Type="String" Name="PRINTER" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="IPPRINTER" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ZPL_ZEBRA" Nullable="true" />
+          <Property Type="String" Name="ZPL_TSC" Nullable="true" />
+          <Property Type="String" Name="ZPL_ZEBRA_FULL_BOX" Nullable="true" />
+          <Property Type="String" Name="ZPL_TSC_FULL_BOX" Nullable="true" />
+          <Property Type="Int32" Name="HASCOVER" Nullable="false" />
+          <Property Type="String" Name="CUST_NAME" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="IDLBLTYPE" Nullable="false" />
+          <Property Type="String" Name="LBLTYPE" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="ZPL_ZEBRA_ENG_CHG" Nullable="true" />
+          <Property Type="String" Name="ZPL_TSC_ENG_CHG" Nullable="true" />
+          <Property Type="String" Name="ZPL_ZEBRA_ENG_CHG_PART" Nullable="true" />
+          <Property Type="String" Name="ZPL_TSC_ENG_CHG_PART" Nullable="true" />
+          <Property Type="Int32" Name="VALIDATE_LEAK_TEST" Nullable="false" />
+          <Property Type="Int32" Name="VALIDATE_SCREW" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getModelByCustomerNo_Result">
+          <Property Type="String" Name="CUSTOMER_NO" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="INTERNAL_NO" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TRACEABILITY" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="TABLE_COVER" Nullable="true" MaxLength="150" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="siixsem_upacking_config_dbModelStoreContainer" CdmEntityContainer="siixsem_upacking_config_dbEntities" >
+          <FunctionImportMapping FunctionImportName="getModelConfig" FunctionName="siixsem_upacking_config_dbModel.Store.getModelConfig">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_upacking_config_dbModel.getModelConfig_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_DET" ColumnName="ID_DET" />
+                <ScalarProperty Name="ISKIT" ColumnName="ISKIT" />
+                <ScalarProperty Name="MODEL" ColumnName="MODEL" />
+                <ScalarProperty Name="STANDARD_PACK" ColumnName="STANDARD_PACK" />
+                <ScalarProperty Name="SERIAL_LENGTH" ColumnName="SERIAL_LENGTH" />
+                <ScalarProperty Name="SIDE" ColumnName="SIDE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="CUSTOMER_NO" ColumnName="CUSTOMER_NO" />
+                <ScalarProperty Name="INTERNAL_NO" ColumnName="INTERNAL_NO" />
+                <ScalarProperty Name="TRACEABILITY" ColumnName="TRACEABILITY" />
+                <ScalarProperty Name="KANBAN" ColumnName="KANBAN" />
+                <ScalarProperty Name="TABLE_ICT" ColumnName="TABLE_ICT" />
+                <ScalarProperty Name="TABLE_FCT" ColumnName="TABLE_FCT" />
+                <ScalarProperty Name="TABLE_COVER" ColumnName="TABLE_COVER" />
+                <ScalarProperty Name="TABLE_PACK" ColumnName="TABLE_PACK" />
+                <ScalarProperty Name="TABLE_GB" ColumnName="TABLE_GB" />
+                <ScalarProperty Name="LABEL" ColumnName="LABEL" />
+                <ScalarProperty Name="VALIDATE_DJ" ColumnName="VALIDATE_DJ" />
+                <ScalarProperty Name="VALIDATE_GAPFILLER" ColumnName="VALIDATE_GAPFILLER" />
+                <ScalarProperty Name="VALIDATE_FLASH_PROG" ColumnName="VALIDATE_FLASH_PROG" />
+                <ScalarProperty Name="VALIDATE_ICT" ColumnName="VALIDATE_ICT" />
+                <ScalarProperty Name="VALIDATE_FCT_MIDDLE" ColumnName="VALIDATE_FCT_MIDDLE" />
+                <ScalarProperty Name="VALIDATE_FCT_FINAL" ColumnName="VALIDATE_FCT_FINAL" />
+                <ScalarProperty Name="VALIDATE_FCT_TIME" ColumnName="VALIDATE_FCT_TIME" />
+                <ScalarProperty Name="VALIDATE_FLUX_LED1" ColumnName="VALIDATE_FLUX_LED1" />
+                <ScalarProperty Name="VALIDATE_COLOR_LED1" ColumnName="VALIDATE_COLOR_LED1" />
+                <ScalarProperty Name="VALIDATE_VOLT_LED1" ColumnName="VALIDATE_VOLT_LED1" />
+                <ScalarProperty Name="VALIDATE_FLUX_LED2" ColumnName="VALIDATE_FLUX_LED2" />
+                <ScalarProperty Name="VALIDATE_COLOR_LED2" ColumnName="VALIDATE_COLOR_LED2" />
+                <ScalarProperty Name="VALIDATE_VOLT_LED2" ColumnName="VALIDATE_VOLT_LED2" />
+                <ScalarProperty Name="ID_LINE" ColumnName="ID_LINE" />
+                <ScalarProperty Name="LINE" ColumnName="LINE" />
+                <ScalarProperty Name="IDPRINTER" ColumnName="IDPRINTER" />
+                <ScalarProperty Name="PRINTER" ColumnName="PRINTER" />
+                <ScalarProperty Name="IPPRINTER" ColumnName="IPPRINTER" />
+                <ScalarProperty Name="ZPL_ZEBRA" ColumnName="ZPL_ZEBRA" />
+                <ScalarProperty Name="ZPL_TSC" ColumnName="ZPL_TSC" />
+                <ScalarProperty Name="ZPL_ZEBRA_FULL_BOX" ColumnName="ZPL_ZEBRA_FULL_BOX" />
+                <ScalarProperty Name="ZPL_TSC_FULL_BOX" ColumnName="ZPL_TSC_FULL_BOX" />
+                <ScalarProperty Name="HASCOVER" ColumnName="HASCOVER" />
+                <ScalarProperty Name="CUST_NAME" ColumnName="CUST_NAME" />
+                <ScalarProperty Name="IDLBLTYPE" ColumnName="IDLBLTYPE" />
+                <ScalarProperty Name="LBLTYPE" ColumnName="LBLTYPE" />
+                <ScalarProperty Name="ZPL_ZEBRA_ENG_CHG" ColumnName="ZPL_ZEBRA_ENG_CHG" />
+                <ScalarProperty Name="ZPL_TSC_ENG_CHG" ColumnName="ZPL_TSC_ENG_CHG" />
+                <ScalarProperty Name="ZPL_ZEBRA_ENG_CHG_PART" ColumnName="ZPL_ZEBRA_ENG_CHG_PART" />
+                <ScalarProperty Name="ZPL_TSC_ENG_CHG_PART" ColumnName="ZPL_TSC_ENG_CHG_PART" />
+                <ScalarProperty Name="VALIDATE_LEAK_TEST" ColumnName="VALIDATE_LEAK_TEST" />
+                <ScalarProperty Name="VALIDATE_SCREW" ColumnName="VALIDATE_SCREW" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getModelByCustomerNo" FunctionName="siixsem_upacking_config_dbModel.Store.getModelByCustomerNo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_upacking_config_dbModel.getModelByCustomerNo_Result">
+                <ScalarProperty Name="CUSTOMER_NO" ColumnName="CUSTOMER_NO" />
+                <ScalarProperty Name="INTERNAL_NO" ColumnName="INTERNAL_NO" />
+                <ScalarProperty Name="TRACEABILITY" ColumnName="TRACEABILITY" />
+                <ScalarProperty Name="TABLE_COVER" ColumnName="TABLE_COVER" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
